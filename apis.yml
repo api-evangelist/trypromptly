@@ -1,23 +1,98 @@
 aid: trypromptly
+
 name: TryPromptly
-description: 'TryPromptly is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: TryPromptly is a startup offering AI‑enhanced prompting tools that help developers and marketers generate high‑quality text for chatbots,
+  content creation, and workflow automation. The platform provides a web interface and API endpoints for managing prompt templates, tracking usage,
+  and integrating with popular LLM services. TryPromptly aims to simplify prompt engineering and accelerate AI adoption across enterprises and
+  small teams.
+
 url: https://raw.githubusercontent.com/api-evangelist/trypromptly/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-25'
+
 modified: '2026-10-25'
+
 tags:
 - Company
-apis: []
+- AI
+- Prompting
+- Automation
+- DeveloperTools
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Vendors
+  url: vendors/trypromptly-vendors.yml
+- type: Spectral
+  url: rules/trypromptly-rules.yml
+- type: JSONLD
+  url: json-ld/trypromptly-context.jsonld
+- type: Vocabulary
+  url: vocabulary/trypromptly-vocabulary.yml
+- type: DataModel
+  url: data-model/trypromptly-data-model.yml
+- type: Conformance
+  url: conformance/trypromptly-conformance.yml
+- type: Hosts
+  url: hosts/trypromptly-hosts.yml
+- type: GettingStarted
+  url: https://docs.trypromptly.com/getting-started/first-app
+- type: Documentation
+  url: https://docs.trypromptly.com/
+- type: GitHubOrganization
+  url: https://github.com/trypromptly
+- type: DomainSecurity
+  url: security/trypromptly-domain-security.yml
 - type: Website
   url: https://trypromptly.com/
+
+apis:
+- aid: trypromptly:trypromptly-api
+  name: TryPromptly API
+  description: 'TryPromptly API as documented publicly: 4 operations. Contract generated from the documentation by API Evangelist (2026-10-25);
+    not the provider''s own document.'
+  humanURL: https://docs.trypromptly.com/apps/integrations/api
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/trypromptly-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/trypromptly-get-api-datasources-response-schema.json
+  - type: JSONSchema
+    url: json-schema/trypromptly-post-api-datasources-response-schema.json
+  - type: JSONSchema
+    url: json-schema/trypromptly-post-api-datasources-request-schema.json
+  - type: JSONSchema
+    url: json-schema/trypromptly-post-api-apps-appuuid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/trypromptly-post-api-apps-request-schema.json
+
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: The homepage returns HTTP 401 Unauthorized, indicating access is gated behind a login.
+  evidence:
+  - url: https://trypromptly.com/
+    status: 401
+  checked: '2026-10-25'
+x-enrichment:
+  date: '2026-10-25'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

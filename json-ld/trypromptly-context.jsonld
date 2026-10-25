@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@vocab": "https://trypromptly.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "trypromptly": "https://trypromptly.com/schema#",
+    "PostApiAppsRequest": "trypromptly:PostApiAppsRequest",
+    "body": {
+      "@id": "trypromptly:body",
+      "@type": "xsd:string"
+    },
+    "PostApiAppsAppuuidRequest": "trypromptly:PostApiAppsAppuuidRequest",
+    "input": {
+      "@id": "trypromptly:input"
+    },
+    "stream": {
+      "@id": "trypromptly:stream",
+      "@type": "xsd:boolean"
+    },
+    "GetApiDatasourcesResponse": "trypromptly:GetApiDatasourcesResponse",
+    "uuid": {
+      "@id": "trypromptly:uuid",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "trypromptly:name",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "trypromptly:type",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "trypromptly:created_at",
+      "@type": "xsd:string"
+    },
+    "updated_at": {
+      "@id": "trypromptly:updated_at",
+      "@type": "xsd:string"
+    },
+    "PostApiDatasourcesRequest": "trypromptly:PostApiDatasourcesRequest",
+    "PostApiDatasourcesResponse": "trypromptly:PostApiDatasourcesResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "TryPromptly API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects TryPromptly's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-25) from openapi/_ae-authored/trypromptly-openapi-generated.yml.",
+  "dcterms:created": "2026-10-25",
+  "dcterms:source": [
+    "openapi/_ae-authored/trypromptly-openapi-generated.yml"
+  ]
+}

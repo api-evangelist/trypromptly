@@ -1,0 +1,16 @@
+generated: '2026-10-25'
+method: none
+source:
+- https://zapier.com/apps/trypromptly/integrations
+- https://n8n.io/integrations/trypromptly/
+- https://composio.dev/toolkits/trypromptly
+- https://monid.ai/tools/trypromptly
+checked:
+- https://composio.dev/toolkits/trypromptly
+- https://monid.ai/tools/trypromptly
+- https://n8n.io/integrations/trypromptly/
+- https://zapier.com/apps/trypromptly/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

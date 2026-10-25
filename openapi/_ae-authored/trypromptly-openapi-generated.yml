@@ -1,0 +1,185 @@
+openapi: 3.1.0
+info:
+  title: TryPromptly API
+  version: '2026-10-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-25: 4 operation(s) read from 2 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; TryPromptly has published no machine-readable contract that the
+    pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 1
+    documentation: 3
+    pages-with-code: 1
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.trypromptly.com/apps/integrations/api
+  - https://docs.trypromptly.com/apis/introduction
+paths:
+  /api/apps:
+    post:
+      operationId: post_api_apps
+      tags:
+      - Api
+      summary: Create an App
+      x-source: https://docs.trypromptly.com/apis/introduction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiAppsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/apps/{appuuid}:
+    post:
+      operationId: post_api_apps_appuuid
+      tags:
+      - Api
+      summary: POST /api/apps/{appUuid}
+      x-source: https://docs.trypromptly.com/apps/integrations/api
+      parameters:
+      - name: appuuid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiAppsAppuuidRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl JavaScript import requests PROMPTLY_TOKEN = ''<promptly_token>'' url = ''http://localhost:3000/api/apps/<app_uuid>/run''
+          payload = { "input" : { "file" : "<file_value>" , "question" : "<question_value>" } , "stream" : True , } headers = { "Content-Type"
+          : "application/json" , "Authorization" : "Token " + PROMPTLY_TOKEN , } response = requests . post ( url , headers = headers , json =
+          payload , st'
+  /api/datasources:
+    get:
+      operationId: get_api_datasources
+      tags:
+      - Api
+      summary: List datasources
+      x-source: https://docs.trypromptly.com/apis/introduction
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiDatasourcesResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_datasources
+      tags:
+      - Api
+      summary: Create a datasource
+      x-source: https://docs.trypromptly.com/apis/introduction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiDatasourcesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiDatasourcesResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostApiAppsRequest:
+      type: object
+      properties:
+        body:
+          type: string
+          description: App definition as YAML
+      required:
+      - body
+    PostApiAppsAppuuidRequest:
+      type: object
+      properties:
+        input:
+          type: object
+          properties:
+            file:
+              type: string
+            question:
+              type: string
+        stream:
+          type: boolean
+    GetApiDatasourcesResponse:
+      type: object
+      properties:
+        uuid:
+          type: string
+          description: DATASOURCE_UUID
+        name:
+          type: string
+          description: DATASOURCE_NAME
+        type:
+          type: string
+          description: DATASOURCE_TYPE
+        created_at:
+          type: string
+          description: DATASOURCE_CREATED_AT
+        updated_at:
+          type: string
+          description: DATASOURCE_UPDATED_AT
+    PostApiDatasourcesRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: DATASOURCE_NAME
+        type:
+          type: string
+          description: DATASOURCE_TYPE
+      required:
+      - name
+      - type
+    PostApiDatasourcesResponse:
+      type: object
+      properties:
+        uuid:
+          type: string
+          description: DATASOURCE_UUID
+        name:
+          type: string
+          description: DATASOURCE_NAME
+        type:
+          type: string
+          description: DATASOURCE_TYPE
+        created_at:
+          type: string
+          description: DATASOURCE_CREATED_AT
+        updated_at:
+          type: string
+          description: DATASOURCE_UPDATED_AT
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+- apiKey: []
+tags:
+- name: Api

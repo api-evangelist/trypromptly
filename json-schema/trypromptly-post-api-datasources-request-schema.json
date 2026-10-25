@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trypromptly/main/json-schema/trypromptly-post-api-datasources-request-schema.json",
+  "title": "PostApiDatasourcesRequest",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/trypromptly-openapi-generated.yml#/components/schemas/PostApiDatasourcesRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "DATASOURCE_NAME"
+    },
+    "type": {
+      "type": "string",
+      "description": "DATASOURCE_TYPE"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}

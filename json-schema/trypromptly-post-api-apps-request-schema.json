@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trypromptly/main/json-schema/trypromptly-post-api-apps-request-schema.json",
+  "title": "PostApiAppsRequest",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/trypromptly-openapi-generated.yml#/components/schemas/PostApiAppsRequest",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "string",
+      "description": "App definition as YAML"
+    }
+  },
+  "required": [
+    "body"
+  ]
+}
